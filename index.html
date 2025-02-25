@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trademint Limited</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #f8f9fa;
+            overflow-x: hidden;
+        }
+        header {
+            background: url('./src/background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 80px 20px;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+        section {
+            padding: 40px 20px;
+        }
+        .gallery img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .contact {
+            background: #343a40;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        form input, form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        form input:focus, form textarea:focus {
+            border-color: #007bff;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            let name = document.querySelector('input[type="text"]').value;
+            let email = document.querySelector('input[type="email"]').value;
+            let message = document.querySelector('textarea').value;
+            
+            window.location.href = `mailto:Akshay.yadav7@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Trademint Limited</h1>
+        <p>Your trusted partner in quality tile solutions worldwide</p>
+    </header>
+    <section>
+        <h2>About Us</h2>
+        <p>At Trademint Limited, we bring elegance and durability to your spaces with our premium tile collections. With a commitment to quality, innovation, and customer satisfaction, we source and deliver the finest tiles from around the world. Whether you're designing a modern home or a commercial masterpiece, our diverse range ensures the perfect fit for every style and need.</p>
+    </section>
+    <section class="gallery">
+        <h2>Our Tile Collection</h2>
+        <img src="./src/tile_sample.jpg" alt="Tile Sample">
+        <img src="./src/marble_tiles.jpg" alt="Marble Tile">
+        <img src="./src/ceramic_tiles.jpeg" alt="Ceramic Tile">
+    </section>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form onsubmit="sendEmail(event)">
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <textarea placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>Trademint Limited</p>
+        <p>Address: 15, Hill of Down House, Spencer Dock Apartments, Dublin</p>
+        <p>Phone: +353 89 976 2451</p>
+    </footer>
+</body>
+</html>
